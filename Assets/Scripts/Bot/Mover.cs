@@ -8,9 +8,16 @@ public class Mover : MonoBehaviour
     private bool activateUpdate;
     private bool activateFixedUpdate;
 
+    private Transform _transform;
+
+    private void Awake()
+    {
+        _transform = GetComponent<Transform>();
+    }
+
     public void Moving()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        _transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
 
     private void Update()
